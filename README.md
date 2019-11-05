@@ -1,29 +1,30 @@
-# Andrew Harper Practicie Project
+# Andrew Harper Practice Project
 
-## This is a second header
+## For Savvy Coders Session 1
 
-**This is in bold**
+**With Minav Misra**
 
-_This is italics_
+_Learning Commands for Markdown_
 
-### Evem Smaller
-##### super small
-###### tiny
-**_This is both bold and italics_**
+### basic commands
+#### touch_ creates a file
+##### flags, commands for commands
+###### -a, means all
+**_ DO NOT USE fm -fr_**
 
-~~strike through this text.~~
+~~IT WAS ALSO ABOUT TRACKING CHANGES THROUGH GIT.~~
 
-Sometimes you want to embed some \*stylized text\*
-right into **your paragraph.** Pretty **COOL**, right!
+Sometimes you want to add some \*pisazzzz\*
+right into **your work.** Pretty **Snazzy**, right!
 
--item
--item
-- another item
-1. task one
-2. task two
-3. task three
+Session 1    
+- STEPS FOR CLASS
+1. Learn Definitions
+2. Learn Commands
+3. Learn How The Systems Communicate Together
+    - Link to my Youtube Channel
 [https://www.youtube.com/channel/UCDQh8vI7EgWDUzVjG0RWDcg?view_as=subscriber
 ]
 
 
-![alt text](https://i.imgur.com/81qyN1y.jpg)
+![alt text](https://publicdomainvectors.org/photos/AnubisSilhouette.png)
