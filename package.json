@@ -1,0 +1,26 @@
+{
+  "name": "AndrewHarper",
+  "version": "1.0.0",
+  "description": "**With Minav Misra**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajharper01/savvy-coders-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajharper01/savvy-coders-practice/issues"
+  },
+  "homepage": "https://github.com/ajharper01/savvy-coders-practice#readme",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0"
+  }
+}
