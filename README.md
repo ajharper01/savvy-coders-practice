@@ -26,4 +26,4 @@ Session 1
 [https://www.youtube.com/channel/UCDQh8vI7EgWDUzVjG0RWDcg?view_as=subscriber
 ]
 
-![ImagelinkTomyYoutubechannel][<img src="https://publicdomainvectors.org/photos/AnubisSilhouette.png">](https://www.youtube.com/channel/UCDQh8vI7EgWDUzVjG0RWDcg?view_as=subscriber)
+![Click Here][<img src="https://publicdomainvectors.org/photos/AnubisSilhouette.png">](https://www.youtube.com/channel/UCDQh8vI7EgWDUzVjG0RWDcg?view_as=subscriber)
