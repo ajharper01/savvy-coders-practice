@@ -17,7 +17,7 @@ _Learning Commands for Markdown_
 Sometimes you want to add some \*pisazzzz\*
 right into **your work.** Pretty **Snazzy**, right!
 
-Session 1    
+Session 1
 - STEPS FOR CLASS
 1. Learn Definitions
 2. Learn Commands
@@ -26,5 +26,4 @@ Session 1
 [https://www.youtube.com/channel/UCDQh8vI7EgWDUzVjG0RWDcg?view_as=subscriber
 ]
 
-
-![alt text](https://publicdomainvectors.org/photos/AnubisSilhouette.png)
+![ImagelinkTomyYoutubechannel][<img src="https://publicdomainvectors.org/photos/AnubisSilhouette.png">](https://www.youtube.com/channel/UCDQh8vI7EgWDUzVjG0RWDcg?view_as=subscriber)
