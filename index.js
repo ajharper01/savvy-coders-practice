@@ -5,6 +5,14 @@ function initSportsScorer(pts){
     return score + pts;
   };
 
-  const threePointer = initSportsScorer(3);
-  console.log(threePointer);
-  }
+  const threePointers = initSportsScorer(3);
+  const touchdown = initSportsScorer(7);
+  console.log(threePointers(99));
+  console.log(touchdown(14));
+  };
+
+  /**
+   * function (score){
+   * return score + 3;
+   * }
+   */
