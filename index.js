@@ -1,18 +1,8 @@
-const name = "Andrew Harper";
+function doMath(x, y, mathFxn){
+  return mathFxn(x,y)}
 
-// Template Literal
-console.log(`Hello World! This is ${name}`);
+function add(x, y){
+  return x + y;
+}
 
-// Object Literal
-const me = {
-  name:"Drew",
-  age: 28,
-  weight: 190,
-  status: "student",
-};
-
-// We are using bracket notation
-console.log(me["name"]);
-
-// We are using dot notation
-console.log(me.age)
+console.log(doMath(add));
