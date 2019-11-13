@@ -1,18 +1,23 @@
-//Next Lesson FUNCTION FACTORY
+function foo() {
+  console.trace();
+  bar();
+  console.trace();
 
-function initSportsScorer(pts){
-  return function(score){
-    return score + pts;
-  };
+  return "foo";
 }
-  const threePointers = initSportsScorer(3);
 
-  const touchdown = initSportsScorer(7);
+function bar() {
+  console.trace();
+  baz();
+  console.trace();
 
-  console.log(threePointers(99));
-  console.log(touchdown(14));
-  /**
-   * function (score){
-   * return score + 3;
-   * }
-   */
+  return "bar";
+}
+
+function baz() {
+  console.trace();
+
+  return "baz";
+}
+
+console.log(foo());
