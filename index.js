@@ -21,3 +21,6 @@ function baz() {
 }
 
 console.log(foo());
+
+//FIRST IN LAST OUT on the STACK
+//While the CALL STACK is engaged Javascript can not do anything else (SINGLE THREADED)
