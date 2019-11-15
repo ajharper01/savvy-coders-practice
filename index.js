@@ -1,24 +1,37 @@
-//function factorial -num * num -1 * num -2... all the way to num ===0
-// 4*3*2*1 = 24
-function factorial(num) {
-  let ret = 1;
-  for (let i = num; i >= 1; i -= 1) {
-    ret *= i;
-  }
-  return ret;
-}
-console.log(factorial(4));
-//counting backwards in a for loop.
+//Pass by value
 
-function factorial(num) {
-if (num === 0){
-return 1;
-}
+let x = 3;
+let y = x;
 
-return num * factorial(num-1);
+function add1(n) {
+  return n + 1;
+}
+//ANY Primitives CANNOT by mutated.
+//ANY Primitives are passed by value.
+//x THROWS AWAY it's '3' and gets a whole new value of <4> through the reassignment given by function;
+x = add1(x);
+console.log("x after add1 is", x);
+console.log(y);
+
+//y will still hold a value of 3 unless the value of x changes at the initial assignment point
+//if the value of x changes throughout a function the value of y will never change.
+
+//Pass by reference exampled below
+const me = {
+  name: "Andrew"
 };
 
-console.log(factorial(4));
+const me2 = me;
 
-//FML I need to figure this out. Get a full understanding
-//Your (if) statement is your way out of the loop when you want it to stop
+function nameChanger(obj, newName) {
+  obj.name = newName;
+}
+// I pass in 'me' to nameChanger
+nameChanger(me, "Fred");
+
+console.log(me);
+console.log(me2);
+//now both me and me2's names are Fred
+
+//const me2=me makes the object me and me2 tied together- everything that happens to me happens to me2
+//OBJECTS ARE PASS BY REFERENCE
