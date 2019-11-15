@@ -1,26 +1,11 @@
-function foo() {
-  console.trace();
-  bar();
-  console.trace();
+function myPow(num, exp) {
+  let ret = num;
 
-  return "foo";
+  for (let i = 1; i < exp; i += 1) {
+    ret *= num;
+  }
+  return ret;
 }
+console.log(myPow(2, 3));
 
-function bar() {
-  console.trace();
-  baz();
-  console.trace();
-
-  return "bar";
-}
-
-function baz() {
-  console.trace();
-
-  return "baz";
-}
-
-console.log(foo());
-
-//FIRST IN LAST OUT on the STACK
-//While the CALL STACK is engaged Javascript can not do anything else (SINGLE THREADED)
+//num can be any number you want to start with to multiply. The exp is for exponents, how many times you want the num to be multiplied by. This is a for Loop. be sure to call the function with Console.log
