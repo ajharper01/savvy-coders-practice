@@ -1,37 +1,21 @@
-//Pass by value
+//Fizz Buzz
+//If we pass a number that's divisible by both 5 and 3, log 'fizzbuzz'
+//If it's only divisible by 3 log 'fizz'
+//If it's only divisible by 5 log 'buzz'
+//If it's not divisible by 5 or 3 log the number.
+//loop over the numbers from 1 to 99.
 
-let x = 3;
-let y = x;
-
-function add1(n) {
-  return n + 1;
+function fizzBuzz() {
+  for (let i = 0; i <= 99; i += 1) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log(`fizzbuzz`);
+    } else if (i % 5 === 0) {
+      console.log(`buzz`);
+    } else if (i % 3 === 0) {
+      console.log(`fizz`);
+    } else {
+      console.log(i);
+    }
+  }
 }
-//ANY Primitives CANNOT by mutated.
-//ANY Primitives are passed by value.
-//x THROWS AWAY it's '3' and gets a whole new value of <4> through the reassignment given by function;
-x = add1(x);
-console.log("x after add1 is", x);
-console.log(y);
-
-//y will still hold a value of 3 unless the value of x changes at the initial assignment point
-//if the value of x changes throughout a function the value of y will never change.
-
-//Pass by reference exampled below
-const me = {
-  name: "Andrew"
-};
-
-const me2 = me;
-
-function nameChanger(obj, newName) {
-  obj.name = newName;
-}
-// I pass in 'me' to nameChanger
-nameChanger(me, "Fred");
-
-console.log(me);
-console.log(me2);
-//now both me and me2's names are Fred
-
-//const me2=me makes the object me and me2 tied together- everything that happens to me happens to me2
-//OBJECTS ARE PASS BY REFERENCE
+console.log(fizzBuzz());
