@@ -1,23 +1,24 @@
-function myPow(num, exp) {
-  let ret = num;
-
-  for (let i = 1; i < exp; i += 1) {
-    ret *= num;
+//function factorial -num * num -1 * num -2... all the way to num ===0
+// 4*3*2*1 = 24
+function factorial(num) {
+  let ret = 1;
+  for (let i = num; i >= 1; i -= 1) {
+    ret *= i;
   }
   return ret;
 }
-console.log(myPow(2, 3));
+console.log(factorial(4));
+//counting backwards in a for loop.
 
-//the above is a for loop example...num can be any number you want to start with to multiply. The exp is for exponents, how many times you want the num to be multiplied by. This is a for Loop. be sure to call the function with Console.log
-
-function myPow(num, exp) {
-if (exp === 0){
+function factorial(num) {
+if (num === 0){
 return 1;
 }
 
-return (num *= myPow(num, exp - 1));
+return num * factorial(num-1);
 };
 
-console.log(myPow(2,3));
+console.log(factorial(4));
 
-//this is the same thing just using recursion
+//FML I need to figure this out. Get a full understanding
+//Your (if) statement is your way out of the loop when you want it to stop
