@@ -29,6 +29,19 @@ const students = [
   "Wallat"
 ];
 
+//To pull particular students out of the element above do this...
+
+function getMs(namesArr) {
+  const mNames = [];
+  for (let i = 0; i < namesArr.length; i += 1) {
+    if (namesArr[i].startsWith("M")) {
+      mNames.push(namesArr[i]);
+    }
+  }
+
+  return mNames;
+}
+console.log(getMs(students));
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 function getRandomInt(min, max) {
