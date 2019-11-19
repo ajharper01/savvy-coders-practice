@@ -1,25 +1,25 @@
-const mySelf = `The Son`;
-
-function initFamily(birthFather, birthMother, mySelf) {
-  return {
-    birthFather,
-    birthMother,
-    mySelfParam: mySelf,
-    getBirthFather: () => `Ron Harper is my: ${this.birthFather}.`,
-    //with arrow syntax the use of this.birthFather is useless
-    //Do not use THIS in an ARROW SYNTAX
-    getBirthMother: function() {
-      return `Janice Johnson is my ${this.birthMother}.`
-    },
-    getMySelf: () =>
-      `They made me, ${mySelfParam}.`
+//FUNCTION CONSTRUCTOR
+function WolfTrainer(breed, age, eyeColor) {
+  this.breed = breed;
+  this.age = age;
+  this.eyeColor = eyeColor;
+  this.ageLimiter = function() {
+    if (this.age <= 1) {
+      return "Do not pull cub from pack for training, it is too young!";
+      }
+        else{
+          return "The chosen cub is old enough to be removed from the pack and receive training.";
+        }
+  };
+  this.wolfBreed = function() {
+    return `${this.breed} Wolf`;
+  };
+  this.myProfile = function() {
+    return `This guidance comes from Andrew, the ${this.wolfBreed()} Whisperer. He is ${this.age} years old and has ${this.eyeColor} eyes.`;
   };
 }
-const myFamily = initFamily("father","mother","son");
-
-console.log(myFamily);
-
-console.log(myFamily.getBirthFather());
-console.log(myFamily.getBirthMother);
-console.log(myFamily.getMySelf);
-//THIS IS WHAT YOU DO NOT DO
+const trainer = new WolfTrainer("Grey", 28, "Honey Brown");
+console.log(trainer);
+console.log(trainer.ageLimiter());
+console.log(trainer.myProfile());
+console.log(trainer.wolfBreed());
