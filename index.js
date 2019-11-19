@@ -22,3 +22,5 @@ const bob = [];
 console.log(Boolean(null)); //false
 console.log(Boolean(undefined)); //false
 console.log(Boolean(bob)); //true
+//! is Something or Nothing only when it comes to primitives//
+//DOES NOT APPLY TO COLLECTIONS
