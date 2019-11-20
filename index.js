@@ -26,6 +26,7 @@ function WolfTrainer(breed, age, eyeColor) {
     this.breed = "White";
   };
   this.setNewTrainer = function(NewTrainer) {
+    //I coule also do (!NewTrainer || typeof NewTrainer !== "string")
     if (NewTrainer && typeof NewTrainer === "string") {
       this.NewTrainer = "Alfred";
     } else {
