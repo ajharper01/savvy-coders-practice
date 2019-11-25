@@ -19,7 +19,7 @@ constructor(name, age, eyeColor){
   this.eyeColor = eyeColor;
 }
 get traitsList(){
-  return `Hello there, I am ${this.name}. Can you add this list of additional traits: ${this.myTraits}.`;
+  return `Hello there, I am ${this.name}. Can you add this list of additional traits to my profile?  TRAITS LIST: ${this.myTraits}.`;
 }
 set traitsList (myArray) {
   if (Array.isArray(myArray)) {
@@ -30,11 +30,12 @@ set traitsList (myArray) {
 };
 };
 const me = new WolfTrainer("Andrew", 28, "Honey Brown");
-const myTraits = [`Hair: Golden Brown`, `10 Fingers`, `10 Toes`, `Height: 69 Inches`, `Weight 190`];
-me.myTraits = [`Hair: Golden Brown`, `10 Fingers`, `10 Toes`, `Height: 69 Inches`, `Weight 190`];
+const myTraits = [`Golden Brown Hair`, `10 Fingers`, `10 Toes`, `Height-69in`, `Weight-190lbs`];
+me.traitsList = [`Golden Brown Hair`, `10 Fingers`, `10 Toes`, `Height-69in`, `Weight-190lbs`];
 console.log(me.traitsList)
-const clientRequest = `Please do not show my height and weight!`
+const clientRequest = `Wait...Please do not show my height and weight!`
 const item1 = 3, item2 = 4;
-const removedItems = myTraits.splice(item1, item2);
-console.log(clientRequest)
-console.log(myTraits);
+const removedItems = me.myTraits.splice(item1, item2);
+console.log(clientRequest);
+console.log(removedItems + ` have been removed. Show current traits...`);
+console.log(me.myTraits);
