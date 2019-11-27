@@ -88,18 +88,19 @@ const numbersAndStrings = numbers.concat(strings);
 const updatedNumbersAndStrings = [];
 //forEach needs to know what it should do for each element -callback fxn.
 //number is similar to doing numbers[i] in our traditional "for" loop.
-numbers.forEach(function(number){
+//arrow syntax DOES NOT have a THIS reference.
+numbers.forEach(number=> {
   console.log(`The number is`, number);
 });
 
-strings.forEach(function(string){
+strings.forEach(string => {
   console.log(`The string is`, string);
 });
 
 function updateNumbersAndStrings(ogArr, stringUpdate, numberUpdate, finalArr){
   const updatedNumbersAndStrings = [];
 
-  ogArr.forEach(function(el){
+  ogArr.forEach(el=> {
   console.log("The current element is", el)
       if (typeof el === `string`) {
       updatedNumbersAndStrings.push((el+= stringUpdate)) ;
