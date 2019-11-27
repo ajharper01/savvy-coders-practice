@@ -1,3 +1,4 @@
+/*
 class Dreamer {
   constructor(fname, lname, age, location, type) {
     this.fname = fname;
@@ -38,10 +39,10 @@ class Dreamer {
     }
   }
 }
-
+/*
 const p = new Dreamer(`Tina`, `Harper`, 21, `FarmTown`, `DayDreamer`);
 console.log(p);
-
+/*
 class Employee extends Dreamer {
   constructor(fname, lname, age, location, type, empid) {
     super(fname, lname, age, location, type);
@@ -52,7 +53,7 @@ class Employee extends Dreamer {
     return "She does not like school!";
   }
 }
-
+/*
 const emp = new Employee(
   "Duke",
   "Ellington",
@@ -62,10 +63,39 @@ const emp = new Employee(
   "123"
 );
 console.log(emp);
-
+/*
 emp.assignments = [
   "Start Kanban ",
   "Ask Evan Cool Questions",
   " Fix ESLINT BS"
 ];
 console.log(emp.assignments);
+*/
+
+//11-26-19 NOTES
+
+//const myArr = new Array();
+//myArr[0] = "hello";
+//or you can do the below
+//const myArr = [];
+
+//consol.log(myArr instanceof Array); `is = to` console.log(Array.isArray(myArr));
+//console.log(typeof myArr)
+
+const numbers = [1, 2, 3];
+const strings = ["hello", "it's me", "I was wondering..."];
+const numbersAndStrings = numbers.concat(strings);
+const updatedNumbersAndStrings = [];
+
+function updateNumbersAndStrings(ogArr, stringUpdate, numberUpdate, finalArr){
+    for(let i = 0; i <ogArr.length; i += 1){
+      if (typeof ogArr[i] === `string`) {
+      updatedNumbersAndStrings.push((ogArr[i]+= stringUpdate)) ;
+    } else {
+      updatedNumbersAndStrings.push((ogArr[i] += numberUpdate));
+    }
+  }
+    return updatedNumbersAndStrings;
+}
+
+console.log(updateNumbersAndStrings(numbersAndStrings, "if after all these years...", 573));
