@@ -1,24 +1,7 @@
-const fruits = ['apple', 'kiwi', 'pineapple', 'jackfruit'];
-
-const moreFruits = ['dragonfruit', 'pineapple', 'mango', 'guava', 'strawberry'];
-// concat joins arrays together
-const allTheFruits = fruits.concat(moreFruits);
-console.log('allTheFruits is', allTheFruits);
-
-//actually removing the first fruit and explaination
-const removeFirst = fruits.shift(moreFruits);
-console.log('take away the first fruit', fruits);
-console.log('moreFruits is still', moreFruits);
-
-//array after I remove the first fruit apple
-console.log(removeFirst);
-
-//add to begin of array
-const giveFirst = fruits.unshift('orange');
-//new array with orange as the first element
-console.log(fruits);
-
+const fruits = ['apple', 'kiwi', 'pineapple', 'jackfruit','dragonfruit', 'pineapple', 'mango', 'guava', 'strawberry'];
 //example of shift and unshift
-fruits.splice(3, 3, 'raspberries');
+const spliceReturns = fruits.splice(3, 3, 'raspberries');
 // replaces 1 element at index 4
+console.log(spliceReturns);
 console.log(fruits);
+//SPLICE EX
