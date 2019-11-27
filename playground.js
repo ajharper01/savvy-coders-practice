@@ -19,3 +19,6 @@ const giveFirst = fruits.unshift('orange');
 console.log(fruits);
 
 //example of shift and unshift
+fruits.splice(3, 3, 'raspberries');
+// replaces 1 element at index 4
+console.log(fruits);
