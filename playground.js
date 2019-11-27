@@ -86,6 +86,15 @@ const numbers = [1, 2, 3];
 const strings = ["hello", "it's me", "I was wondering..."];
 const numbersAndStrings = numbers.concat(strings);
 const updatedNumbersAndStrings = [];
+//forEach needs to know what it should do for each element -callback fxn.
+//number is similar to doing numbers[i] in our traditional "for" loop.
+numbers.forEach(function(number){
+  console.log(`The number is`, number);
+});
+
+strings.forEach(function(string){
+  console.log(`The string is`, string);
+});
 
 function updateNumbersAndStrings(ogArr, stringUpdate, numberUpdate, finalArr){
     for(let i = 0; i <ogArr.length; i += 1){
