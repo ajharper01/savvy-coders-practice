@@ -83,22 +83,34 @@ console.log(emp.assignments);
 //console.log(typeof myArr)
 
 const numbers = [1, 2, 3];
-const strings = ["hello", "it's me", "I was wondering..."];
+const strings = ["What?", "Huh?", "Who?"];
 const numbersAndStrings = numbers.concat(strings);
 const updatedNumbersAndStrings = [];
 //forEach needs to know what it should do for each element -callback fxn.
 //number is similar to doing numbers[i] in our traditional "for" loop.
 //arrow syntax DOES NOT have a THIS reference.
-numbers.forEach(number=> {
-  console.log(`The number is`, number);
-});
+//use map to add 1 to each number.
 
-strings.forEach(string => {
-  console.log(`The string is`, string);
+const result = numbers.map(number=> {
+  return number + 1;
 });
+console.log(numbers)
+console.log(result)
+
+const results = strings.map(string => {
+  return string + ` my name is`;
+});
+console.log(strings)
+console.log(results)
 
 function updateNumbersAndStrings(ogArr, stringUpdate, numberUpdate, finalArr){
-  const updatedNumbersAndStrings = [];
+  return ogArr.map(el=> {
+    if (typeof el === `string`) {
+//A return in a map's callback fxn pushes the result onto the new Array that will be created from the map.
+      return ((el+= stringUpdate));
+    }
+      return((el += numberUpdate));
+  });
 
   ogArr.forEach(el=> {
   console.log("The current element is", el)
@@ -110,6 +122,8 @@ function updateNumbersAndStrings(ogArr, stringUpdate, numberUpdate, finalArr){
   });
     return updatedNumbersAndStrings;
 }
-
-console.log(updateNumbersAndStrings(numbersAndStrings, "if after all these years...", 573));
+const slimShady = `chka-chka, Slim Shady`
+console.log(updateNumbersAndStrings(numbersAndStrings, "Slim Shady", 001));
+console.log(slimShady);
 //same functionality using a for each from the last commit
+//MAP WILL ALWAYS RETURN AN ARRAY WITH MATCHING LENGTH
