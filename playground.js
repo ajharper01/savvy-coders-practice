@@ -97,14 +97,18 @@ strings.forEach(function(string){
 });
 
 function updateNumbersAndStrings(ogArr, stringUpdate, numberUpdate, finalArr){
-    for(let i = 0; i <ogArr.length; i += 1){
-      if (typeof ogArr[i] === `string`) {
-      updatedNumbersAndStrings.push((ogArr[i]+= stringUpdate)) ;
+  const updatedNumbersAndStrings = [];
+
+  ogArr.forEach(function(el){
+  console.log("The current element is", el)
+      if (typeof el === `string`) {
+      updatedNumbersAndStrings.push((el+= stringUpdate)) ;
     } else {
-      updatedNumbersAndStrings.push((ogArr[i] += numberUpdate));
+      updatedNumbersAndStrings.push((el += numberUpdate));
     }
-  }
+  });
     return updatedNumbersAndStrings;
 }
 
 console.log(updateNumbersAndStrings(numbersAndStrings, "if after all these years...", 573));
+//same functionality using a for each from the last commit
