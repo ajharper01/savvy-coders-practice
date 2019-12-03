@@ -234,3 +234,9 @@ const users = [
 
 const usersPrefix = users.map(user => `Mr. ${user.name}`);
 console.log(usersPrefix);
+
+const usersSelection = users.map(
+  user => `${user.username}, ${user.email}, ${user.website}`
+);
+console.log(usersSelection);
+//use of map in terms of strings
