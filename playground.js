@@ -240,3 +240,8 @@ const usersSelection = users.map(
 );
 console.log(usersSelection);
 //use of map in terms of strings
+
+//filter = names.filter(name => name.length > 7);BOOLEAN;
+//Just returns if something is true and does not return if something does not
+const resultOfFilter = users.filter(user => user.username.length > 12);
+console.log(resultOfFilter);
