@@ -240,13 +240,15 @@ const users = [
 long way
 */
 
-const directories = users.map(user => ({
-  [`${user.company.name}`]: getUsersForCompany(users, user.company.name)
+const directories = users.map(({ company }) => ({
+  [`${company.name}`]: getUsersForCompany(users, company.name)
 }));
-//shorter version
+//deconstructor version
 
 function getUsersForCompany(data, companyName) {
   return data.filter(d => d.company.name === companyName);
 }
 
-console.log(directories);
+directories.forEach(directory => {
+  console.log(directory);
+});
