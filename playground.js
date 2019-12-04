@@ -250,15 +250,37 @@ console.log(shortenedData);
 }));
 */
 //filtering only companies that start with A
-const twoDetails = users
+/**const twoDetails = users
   .map(({ name, company }) => ({
     name,
     companyName: company.name
   }))
   .filter(user => user.companyName.startsWith("A"));
-
+*/
 //or you could do user.companyName[0] === "A"
 
-console.log(twoDetails);
+//console.log(twoDetails);
 
-//function stripDataForSpecifiedFields(data, fields) {}
+//this is a utility function
+//using nested maps: fields.map
+//data is a named parameter that IN THIS CASE happens to reference 'users'
+//d IN THIS CASE represents an individual user from users which is the array where the information is coming from
+function stripDataForSpecifiedFields(data, fields) {
+  return data.map(d =>
+    //fields will map for every peice of data and in this case it is over the user info for each user
+    fields.map(field => {
+      return {
+        [field]: d[field]
+        //THIS IS WHERE YOU MUST USE BRACKET NOTATION!!!!
+      };
+    })
+  );
+}
+//when you use [] we specify to sjs that we want to use the value of the variable field and not just "field" as a string
+//take in any array of objects and an array of fields and strip the data down to return just that information
+const userNameAndPhones = stripDataForSpecifiedFields(users, [
+  "name",
+  "phone",
+  "address"
+]);
+console.log(userNameAndPhones);
