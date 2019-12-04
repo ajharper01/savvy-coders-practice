@@ -233,11 +233,11 @@ const users = [
 ];
 //function mergeCompanies(data, acquiringCompany, acquiredCompany) {}
 //"Hoeger LLC" has been acquired by "Yost and Sons"
-const updateUsersCompany = users.map(user => {
-  if (user.company.name === "Hoeger LLC") {
-    user.company.name = "Yost and Sons";
+const updateUsersCompany = users.map(({ company }) => {
+  if (company.name === "Hoeger LLC") {
+    company.name = "Yost and Sons";
   }
-  return user;
+  return company;
 });
 
 console.log(updateUsersCompany);
