@@ -231,14 +231,20 @@ const users = [
     }
   }
 ];
-//function mergeCompanies(data, acquiringCompany, acquiredCompany) {}
 //"Hoeger LLC" has been acquired by "Yost and Sons"
-const updateUsersCompany = users.map(({ company }) => {
-  if (company.name === "Hoeger LLC") {
-    company.name = "Yost and Sons";
-  }
-  return company;
-});
 
-console.log(updateUsersCompany);
-//replacing Hoeger LLC with Yost and Sons
+function mergeCompanies(data, acquiringCompany, acquiredCompany) {
+  return data.map(d => {
+    if (d.company.name === acquiredCompany) {
+      d.company.name = acquiringCompany;
+    }
+    return d;
+  });
+}
+const updatedUsersCompany = mergeCompanies(
+  users,
+  "Yost and Sons",
+  "Hoeger LLC"
+);
+console.log(updatedUsersCompany);
+//example of mapping for replacing variable inside of the data set
