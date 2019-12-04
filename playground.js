@@ -231,56 +231,14 @@ const users = [
     }
   }
 ];
+//function mergeCompanies(data, acquiringCompany, acquiredCompany) {}
+//"Hoeger LLC" has been acquired by "Yost and Sons"
+const updateUsersCompany = users.map(user => {
+  if (user.company.name === "Hoeger LLC") {
+    user.company.name = "Yost and Sons";
+  }
+  return user;
+});
 
-//added parenthesis here to let js know for this instance we want to return an object with map and one line arrow functions
-/**
-const shortenedData = users.map(user => ({
-  name: user.name,
-  address: user.address,
-  phone: user.phone
-}));
-
-console.log(shortenedData);
-*/
-
-/**const shortenedData = users.map(({ name, address, phone }) => ({
-  name,
-  address,
-  phone
-}));
-*/
-//filtering only companies that start with A
-/**const twoDetails = users
-  .map(({ name, company }) => ({
-    name,
-    companyName: company.name
-  }))
-  .filter(user => user.companyName.startsWith("A"));
-*/
-//or you could do user.companyName[0] === "A"
-
-//console.log(twoDetails);
-
-//this is a utility function
-//using nested maps: fields.map
-//data is a named parameter that IN THIS CASE happens to reference 'users'
-//d IN THIS CASE represents an individual user from users which is the array where the information is coming from
-function stripDataForSpecifiedFields(data, fields) {
-  return data.map(d =>
-    //fields will map for every peice of data and in this case it is over the user info for each user
-    fields.map(field => {
-      return {
-        [field]: d[field]
-        //THIS IS WHERE YOU MUST USE BRACKET NOTATION!!!!
-      };
-    })
-  );
-}
-//when you use [] we specify to sjs that we want to use the value of the variable field and not just "field" as a string
-//take in any array of objects and an array of fields and strip the data down to return just that information
-const userNameAndPhones = stripDataForSpecifiedFields(users, [
-  "name",
-  "phone",
-  "address"
-]);
-console.log(userNameAndPhones);
+console.log(updateUsersCompany);
+//replacing Hoeger LLC with Yost and Sons
