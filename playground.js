@@ -233,18 +233,9 @@ const users = [
 ];
 //"Hoeger LLC" has been acquired by "Yost and Sons"
 
-function mergeCompanies(data, acquiringCompany, acquiredCompany) {
-  return data.map(d => {
-    if (d.company.name === acquiredCompany) {
-      d.company.name = acquiringCompany;
-    }
-    return d;
-  });
+function getUsersForCompany(data, companyName) {
+  return data.filter(d => d.company.name === companyName);
 }
-const updatedUsersCompany = mergeCompanies(
-  users,
-  "Yost and Sons",
-  "Hoeger LLC"
-);
-console.log(updatedUsersCompany);
-//example of mapping for replacing variable inside of the data set
+const hoegerUsers = getUsersForCompany(users, "Hoeger LLC");
+console.log(hoegerUsers);
+//example of filtering out for a specific company name
