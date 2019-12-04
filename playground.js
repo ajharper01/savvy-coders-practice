@@ -232,16 +232,21 @@ const users = [
   }
 ];
 
-const usersPrefix = users.map(user => `Mr. ${user.name}`);
-console.log(usersPrefix);
+//added parenthesis here to let js know for this instance we want to return an object with map and one line arrow functions
+/**
+const shortenedData = users.map(user => ({
+  name: user.name,
+  address: user.address,
+  phone: user.phone
+}));
 
-const usersSelection = users.map(
-  user => `${user.username}, ${user.email}, ${user.website}`
-);
-console.log(usersSelection);
-//use of map in terms of strings
+console.log(shortenedData);
+*/
 
-//filter = names.filter(name => name.length > 7);BOOLEAN;
-//Just returns if something is true and does not return if something does not
-const resultOfFilter = users.filter(user => user.username.length > 12);
-console.log(resultOfFilter);
+const shortenedData = users.map(({ name, address, phone }) => ({
+  name,
+  address,
+  phone
+}));
+
+console.log(shortenedData);
