@@ -234,8 +234,14 @@ const users = [
 //"Hoeger LLC" has been acquired by "Yost and Sons"
 
 function getUsersForCompany(data, companyName) {
-  return data.filter(d => d.company.name === companyName);
+  return data
+    .filter(d => d.company.name === companyName)
+    .map(({ name, address, phone }) => ({
+      name,
+      address,
+      phone
+    }));
 }
 const hoegerUsers = getUsersForCompany(users, "Hoeger LLC");
 console.log(hoegerUsers);
-//example of filtering out for a specific company name
+//Mapping a filter example
