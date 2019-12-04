@@ -231,17 +231,22 @@ const users = [
     }
   }
 ];
-//"Hoeger LLC" has been acquired by "Yost and Sons"
+
+/**const directories = users.map(user => {
+  return {
+    [`${user.company.name}`]: getUsersForCompany(users, user.company.name)
+  };
+});
+long way
+*/
+
+const directories = users.map(user => ({
+  [`${user.company.name}`]: getUsersForCompany(users, user.company.name)
+}));
+//shorter version
 
 function getUsersForCompany(data, companyName) {
-  return data
-    .filter(d => d.company.name === companyName)
-    .map(({ name, address, phone }) => ({
-      name,
-      address,
-      phone
-    }));
+  return data.filter(d => d.company.name === companyName);
 }
-const hoegerUsers = getUsersForCompany(users, "Hoeger LLC");
-console.log(hoegerUsers);
-//Mapping a filter example
+
+console.log(directories);
