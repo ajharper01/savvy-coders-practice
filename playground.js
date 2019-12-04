@@ -243,10 +243,22 @@ const shortenedData = users.map(user => ({
 console.log(shortenedData);
 */
 
-const shortenedData = users.map(({ name, address, phone }) => ({
+/**const shortenedData = users.map(({ name, address, phone }) => ({
   name,
   address,
   phone
 }));
+*/
+//filtering only companies that start with A
+const twoDetails = users
+  .map(({ name, company }) => ({
+    name,
+    companyName: company.name
+  }))
+  .filter(user => user.companyName.startsWith("A"));
 
-console.log(shortenedData);
+//or you could do user.companyName[0] === "A"
+
+console.log(twoDetails);
+
+//function stripDataForSpecifiedFields(data, fields) {}
