@@ -248,7 +248,7 @@ const directories = users.map(({ company }) => ({
 function getUsersForCompany(data, companyName) {
   return data.filter(d => d.company.name === companyName);
 }
-
+//callback function to log directory below
 directories.forEach(directory => {
   console.log(directory);
 });
