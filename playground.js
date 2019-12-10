@@ -1209,48 +1209,47 @@ const todos = [
     completed: false
   }
 ];
-//check task completion
-function checkTaskCompletion(todo) {
-  return todos.filter(todo => todo.completed === true);
-}
+//A.check task completion
+//function checkTaskCompletion(todo) {
+//return todos.filter(todo => todo.completed === true);
+//}
 //console.log(checkTaskCompletion(todos));
 
 //1.getIncompleteTasks
-function getIncompleteTasks(todo) {
-  return todos.filter(todo => todo.completed === false);
-}
+//function getIncompleteTasks(todo) {
+  //return todos.filter(todo => todo.completed === false);
+//}
 //console.log(getIncompleteTasks(todos));
 
 //2. Replace the userId VALUE with 'workhorse'.
-const notComplete = getIncompleteTasks(todos);
-function updateUserId(workhorse) {
-  notComplete.map(name => (name.userId = "workhorse"));
-  return notComplete;
-}
+//const notComplete = getIncompleteTasks(todos);
+//function updateUserId(workhorse) {
+//  notComplete.map(name => (name.userId = "workhorse"));
+ // return notComplete;
+//}
 //console.log(updateUserId());
 
 //3. Get All Tasks
-function getAllTasksForUser(todo) {
-  return todos;
-}
+//function getAllTasksForUser(todo) {
+//  return todos;
+//}
 //console.log(getAllTasksForUser());
 
 //4.🗺️over these tasks, marking each one as 'complete.'
-function markAllComplete(todo) {
+//function markAllComplete(todo) {
   todos.map(marked => (marked.markTask = "Finally Complete"));
   return todos;
-}
+//}
 //console.log(markAllComplete());
 
 //5. get tasks per userId
-function tallyTasksPerUserId(tasks) {
-  return tasks.reduce((currentTask, tally) => {
+function tallyTasksPerUserId(todo) {
+  return todos.reduce((id, tally) => {return id + tally;} ,0);
+}
     // Your code here!
     /**
      * 1. Check if the current 'userId' is already included in the 'finished tally object'.
      * 2. If not, create that 'userId' and set its VALUE equal to 1.
      * 3. ELSE, add one to the current VALUE for that 'userId'
      * */
-//})
-//}
-
+console.log('tasks per userId:', tallyTasksPerUserId());

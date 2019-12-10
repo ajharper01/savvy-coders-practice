@@ -1,54 +1,52 @@
-//Arrays [] have auto-incremented numerical keys AKA index---instead of {} named keys with strings
-//Collections AKA Composite data types
-//PRIMITIVES are DISCRETE data types
+//It will be 3 simple problems (Array of primitives) one each for map(), reduce() and filter().
 
-//const myArr = [];
-//Array
+/**const fastFoodRestaurants =[{    name: "Burger King",
+    comboOptions: 6,
+    sides: "Fries", "Onion Rings",
+    drinks: "Coke Products"
+  },{name: "Taco Bell",
+    comboOptions: 7,
+    sides: "Nachos", "Cinnamon Twists",
+    drinks: "Pepsi Products"
+  },{name: "Mc Donalds",
+    comboOptions: 8,
+    sides: "Fries", "Apple Pie",
+    drinks: "All Products"
+  },{name: "Wendy's",
+    comboOptions: 9,
+    sides: "Fries", "Onion Rings",
+    drinks: "Pepsi Products"
+  },]
+*/
+//const strings = ["xBox1X","PS4","SegaGen","N64","switch","nintendoDS"];
+//const numbers = [1, 2, 3, 4, 5, ,6 ,7 ,8 , 9, 10];
+//const booleans = [false, true];
 
-//const myObj = {};
-//Object
+//function theBestSystem(best){
+//  return strings.filter(best => best === "xBox1X" );
+//}
+//console.log(theBestSystem());
+//const creator = strings.map(creator => `Microsoft made ${best}`);
 
-//myObj.name = "Andrew"; //dot notation
-//myObj["age"] = 28; //bracket notation
+//function xboxCreator(creator, sal) {
+//  return names.map(name => `${sal} ${name}`);
+//}
 
-//myArr[0] = "hello";
+//console.log(addSalutation(names, "Mrs."));
 
-const students = [
-  "Andrew",
-  "Billy",
-  "George",
-  "Heather",
-  "Madison",
-  "Marque",
-  "Martin",
-  "Nikki",
-  "Oscar",
-  "RhondaLyn",
-  "Sidney",
-  "Tracie",
-  "Wallat"
-];
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-//To pull particular students out of the element above do this...
+function filterOdds(num) {
+  return nums.filter(num => num % 2 === 1);
+}
+//console.log(filterOdds());
 
-function getMs(namesArr) {
-  const mNames = [];
-  for (let i = 0; i < namesArr.length; i += 1) {
-    if (namesArr[i].startsWith("M")) {
-      mNames.push(namesArr[i]);
-    }
+// TODO: Write a funtion that returns the sum of all the numbers in any ARRAY of NUMBERS.
+function numberSummer(num) {
+  return nums.reduce((accumulator, currentNum) => accumulator + currentNum);
   }
+console.log(numberSummer());
+// TODO: MAP over nums and triple each number.
 
-  return mNames;
-}
-console.log(getMs(students));
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+console.log(nums.map(num => num * 3));
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-console.log(students[getRandomInt(0, students.length - 1)]);
-
-//console.log(math.ceiling(math.random() *100);
