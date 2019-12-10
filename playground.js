@@ -1217,7 +1217,7 @@ const todos = [
 
 //1.getIncompleteTasks
 //function getIncompleteTasks(todo) {
-  //return todos.filter(todo => todo.completed === false);
+//return todos.filter(todo => todo.completed === false);
 //}
 //console.log(getIncompleteTasks(todos));
 
@@ -1225,7 +1225,7 @@ const todos = [
 //const notComplete = getIncompleteTasks(todos);
 //function updateUserId(workhorse) {
 //  notComplete.map(name => (name.userId = "workhorse"));
- // return notComplete;
+// return notComplete;
 //}
 //console.log(updateUserId());
 
@@ -1237,19 +1237,19 @@ const todos = [
 
 //4.🗺️over these tasks, marking each one as 'complete.'
 //function markAllComplete(todo) {
-  todos.map(marked => (marked.markTask = "Finally Complete"));
-  return todos;
+//todos.map(marked => (marked.markTask = "Finally Complete"));
+//return todos;
 //}
 //console.log(markAllComplete());
 
-//5. get tasks per userId
-function tallyTasksPerUserId(todo) {
-  return todos.reduce((id, tally) => {return id + tally;} ,0);
-}
-    // Your code here!
-    /**
-     * 1. Check if the current 'userId' is already included in the 'finished tally object'.
-     * 2. If not, create that 'userId' and set its VALUE equal to 1.
-     * 3. ELSE, add one to the current VALUE for that 'userId'
-     * */
-console.log('tasks per userId:', tallyTasksPerUserId());
+//5. get tasks per userId example for user 5
+//const user5Tasks = tallyTasks(todos, 5);
+//function tallyTasks(id, userId) {
+//return todos.reduce(function(tally, id) {
+//if (id.userId === userId) {
+//tally++;
+//}
+//return tally;
+//}, 0);
+//}
+//console.log(user5Tasks);

@@ -23,8 +23,8 @@ function doesHelloExist(strings) {
 }
 //The above is includes coded out.
 
-//console.log(doesHelloExist(strs));
-//console.log(strs.includes("hello"));
+console.log(doesHelloExist(strs));
+console.log(strs.includes("hello"));
 
 //The below tells me how many are in the array
 function countOccurences(someArr, target) {
