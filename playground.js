@@ -4017,10 +4017,8 @@ const comments = [
       "perspiciatis quis doloremque\nveniam nisi eos velit sed\nid totam inventore voluptatem laborum et eveniet\naut aut aut maxime quia temporibus ut omnis"
   }
 ];
-const bodyLength = (comments, "body");
-
-function howLongIsBody(book) {
-  return comments.map(({ body }) => body);
+function buildBook(bookData) {
+  return bookData.map(({ body }) => body);
 }
-console.log(howLongIsBody(comments, 0));
+console.log(buildBook(comments));
 //There are a group of people and each person is responsible for writing a piece of this book. I want to put the book together by mapping the bodies.
