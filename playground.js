@@ -242,5 +242,25 @@ function getTLD(url) {
 //const tlds = users.map(({website, email}) => `${getTLD(website)} ${getTLD(email)}`);
 //console.log(tlds);
 
-const BizTlds = users.map(({website}) => getTLD(website)).filter(website => website === ".biz");
-console.log(BizTlds)
+//const BizTlds = users.reduce(({website}) => getTLD(website)).filter(website => website === ".biz");
+//console.log(BizTlds)
+
+//const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+//function giveSum(addNums) {
+  //return nums.reduce((sum, num) => sum + num);
+//}
+//console.log(giveSum());
+
+//console.log(nums.reduce((total, num) => total + num));
+const tldTally = users
+.map(({website}) => getTLD(website))
+.reduce((tally, TLD) =>
+{if (!tally[TLD]) {tally[TLD] = 1;
+} else {
+  tally[TLD] += 1;
+}
+  return tally;
+}, {});
+console.log(tldTally);
+//tally using reduce for a sum of values in an array
