@@ -255,12 +255,14 @@ function getTLD(url) {
 //console.log(nums.reduce((total, num) => total + num));
 const tldTally = users
 .map(({website}) => getTLD(website))
-.reduce((tally, TLD) =>
-{if (!tally[TLD]) {tally[TLD] = 1;
-} else {
-  tally[TLD] += 1;
-}
+.reduce((tally, TLD) => {
+//{if (!tally[TLD]) {tally[TLD] = 1;
+//} else {
+  //tally[TLD] += 1;
+//}
+tally[TLD] ? (tally[TLD] += 1) : (tally[TLD] = 1);
   return tally;
 }, {});
 console.log(tldTally);
 //tally using reduce for a sum of values in an array
+//ternary operator OPTION of the above^ tally[TLD] ? (tally[TLD] += 1) : (tally[TLD] = 1);
