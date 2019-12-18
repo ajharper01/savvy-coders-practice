@@ -1209,62 +1209,47 @@ const todos = [
     completed: false
   }
 ];
-//A.check task completion
-function checkTaskCompletion(todo) {
-  return todos.filter(todo => todo.completed === true);
+
+function checkTaskCompletion(task) {
+  return task.completed;
 }
-console.log(checkTaskCompletion(todos));
 
-//1.getIncompleteTasks
-function getIncompleteTasks(todo) {
-  return todos.filter(todo => todo.completed === false);
+function delegateIncompleteTasksToUser(tasks, workhorseId) {
+  return tasks
+    .filter(task => !checkTaskCompletion(task))
+    .map(task => {
+      task.userId = workhorseId;
+      return task;
+    });
 }
-console.log(getIncompleteTasks(todos));
 
-//2. Replace the userId VALUE with 'workhorse'.
-const notComplete = getIncompleteTasks(todos);
-function updateUserId(workhorse) {
-  notComplete.map(name => (name.userId = "workhorse"));
-  return notComplete;
+function getAllTasksForUser(tasks, userId) {
+  return tasks.filter(task => task.userId === userId);
 }
-console.log(updateUserId());
 
-//3. Get All Tasks
-function getAllTasksForUser(todo) {
-  return todos;
+function getIncompleteTasks(tasks) {
+  return tasks.filter(task => !checkTaskCompletion(task));
 }
-console.log(getAllTasksForUser());
 
-//4.🗺️over these tasks, marking each one as 'complete.'
-function markAllComplete(todo) {
-  todos.map(marked => (marked.markTask = "Finally Complete"));
-  return todos;
+function completeTasksForUser(tasks, userId) {
+  return tasks
+    .filter(task => (task.userId = userId))
+    .map(task => {
+      task.completed = true;
+      return task;
+    });
 }
-console.log(markAllComplete());
 
-//5. get tasks per userId example for user 5
-//for one userId
-function tallyTasks(id, userId) {
-  return todos.reduce(function(tally, id) {
-    if (id.userId === userId) {
-      tally += 1;
-    }
-    return tally;
-  }, 0);
-}
-const user5Tasks = tallyTasks(todos, 5);
-console.log(user5Tasks);
-
-//for all userIds
-
-function tallyTasksForEachUser(todo) {
-  return todos.reduce((tally, id) => {
-    if (tally[id.userid] === undefined) {
-      tally[id.userid] = 1;
-    } else {
-      tally[id.userid] += 1;
-    }
+function tallyTasksPerPerson(tasks) {
+  return tasks.reduce((tally, currentTask) => {
+    const currentId = currentTask.userId;
+    tally[currentId] ? (tally[currentId] += 1) : (tally[currentId] = 1);
     return tally;
   }, {});
 }
-console.log(tallyTasksForEachUser(todos));
+
+console.log(delegateIncompleteTasksToUser(todos, 1));
+console.log(getAllTasksForUser(todos, 2));
+console.log(getIncompleteTasks(todos));
+console.log(completeTasksForUser(todos, 2));
+console.log(tallyTasksPerPerson(todos));
